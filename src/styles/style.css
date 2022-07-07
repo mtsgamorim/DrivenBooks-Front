@@ -10,14 +10,9 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   font-family: "Roboto", sans-serif;
   background-color: var(--color-bg-page);
   color: var(--color-text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

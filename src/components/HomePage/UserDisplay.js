@@ -7,14 +7,26 @@ export default function UserDisplay() {
   const { userData } = useContext(UserContext);
   return (
     <DisplayName>
-      <span>Bem vindo, {userData.name}</span>
+      <div>
+        <span>Bem vindo, {userData.name}</span>
+      </div>
+      <div>
+        <ion-icon name="cart-outline"></ion-icon>
+      </div>
     </DisplayName>
   );
 }
 
 const DisplayName = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-right: 80px;
   span {
     font-size: 28px;
+  }
+  ion-icon {
+    font-size: 30px;
+    margin-left: 18px;
   }
 `;
