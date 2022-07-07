@@ -2,7 +2,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
-
 import Button from "../shared/Button";
 import Input from "../shared/Input";
 
@@ -19,7 +18,7 @@ export default function SignUpForm(){
     async function submitData(event) {
         event.preventDefault();
         try {
-            const URL="http://localhost:5000/sign-up";
+            const URL="https://store-bookstore.herokuapp.com/sign-up";
             await axios.post(URL, {
                 name,
                 email,
