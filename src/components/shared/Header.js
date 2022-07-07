@@ -11,10 +11,13 @@ export default function Header() {
   const { userData } = useContext(UserContext);
   return (
     <Container>
+      <TopBarDesktop>
       <LogoBox>
         <LargeLogo />
-      </LogoBox>
-      {userData ? <UserDisplay /> : <LoginMenu />}
+        </LogoBox>
+        {userData ? <UserDisplay /> : <LoginMenu />}  
+      </TopBarDesktop>
+      
     </Container>
   );
 }
@@ -22,8 +25,8 @@ export default function Header() {
 const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 80px;
+  justify-content:center;
+  height: 65px;
   width: 100%;
   background-color: #a795a5;
   position: fixed;
@@ -33,4 +36,11 @@ const Container = styled.div`
 
 const LogoBox = styled.div`
   margin-left: 80px;
+`;
+
+const TopBarDesktop = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 935px;
 `;
