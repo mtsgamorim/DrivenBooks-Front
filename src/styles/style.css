@@ -1,32 +1,32 @@
-*{
-    box-sizing: border-box;
-    --color-bg-page:#3b2b46;
-    --color-bg-header:#a795a5;
-    --color-bg-footer: #7a959e;
-    --color-text: #dce8f8;
-    --color-bg-input: #ffffea;
-    --color-text-input: #323b47;
-    --color-logo:rgb(112, 100, 129);
+* {
+  box-sizing: border-box;
+  --color-bg-page: #3b2b46;
+  --color-bg-header: #a795a5;
+  --color-bg-footer: #7a959e;
+  --color-text: #dce8f8;
+  --color-bg-input: #ffffea;
+  --color-text-input: #323b47;
+  --color-logo: rgb(112, 100, 129);
 }
 
-body{
-    width: 100vw;
-    height: 100vh;
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--color-bg-page);
-    color: var(--color-text);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
 body {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
