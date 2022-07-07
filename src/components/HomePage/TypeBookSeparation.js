@@ -58,6 +58,16 @@ const Container = styled.div`
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 860px;
+  height:fit-content;
+  flex-wrap:wrap;
+  font-family: 'Bungee Shade', cursive;
+  color:#fbefdc;
+  background-color:#424e5e;
+  padding:25px 0 25px 0;
+  
   h1 {
     font-weight: 700;
     font-size: 30px;
@@ -69,12 +79,19 @@ const BookSpace = styled.div`
   display: flex;
   align-items: center;
   overflow: hidden;
-  width: 70%;
+  /* width: 70%; */
+  width:fit-content;
+  min-width: 300px;
   height: 350px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: 1px solid #424e5e;
+  color: #424e5e;
   border-radius: 5px;
+  background-color: var(--color-bg-footer);
+  font-family: "Roboto", sans-serif;
+  margin-top:20px;
+  padding:15px 15px 15px 0;
 `;
 
 const Book = styled.div`
@@ -83,6 +100,7 @@ const Book = styled.div`
   align-items: center;
   flex-direction: column;
   margin-left: 20px;
+  color: #000f27;
   img {
     width: 200px;
     height: 260px;
@@ -94,4 +112,13 @@ const Book = styled.div`
 
 const AdjustWidth = styled.div`
   width: 200px;
+  padding:5px;
+  display:flex;
+  flex-direction:column;
+  align-items: flex-start;
+  justify-content:center;
+  h3{
+    margin-bottom:5px;
+    flex-wrap:wrap;
+  }
 `;
