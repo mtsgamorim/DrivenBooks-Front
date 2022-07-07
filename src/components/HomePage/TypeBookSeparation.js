@@ -24,7 +24,9 @@ export default function TypeBookSeparation({ type }) {
   }
 
   useEffect(() => {
-    const promise = axios.get(`http://localhost:5000/products/${type}`);
+    const promise = axios.get(
+      `https://store-bookstore.herokuapp.com/products/${type}`
+    );
 
     promise.then((res) => {
       setBooks(res.data);
