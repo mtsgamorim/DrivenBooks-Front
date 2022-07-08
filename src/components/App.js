@@ -3,6 +3,7 @@ import SignInPage from "./SignInPage/SignInPage";
 import SignUpPage from "./SignUpPage/SignUpPage";
 import BookPage from "./BookPage/BookPage";
 import HomePage from "./HomePage/HomePage";
+import Cart from "./Cart/Cart";
 import { useState } from "react";
 import UserContext from "../contexts/UserContext";
 
@@ -16,9 +17,7 @@ export default function App() {
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/item/:id" element={<BookPage />} />
-          {/* PODUTO "/items" ou "/item" ou "/books" ou "/book" 
-                    CARRINHO "/cart" ou "/nav-cart"
-                    COMPRA */}
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

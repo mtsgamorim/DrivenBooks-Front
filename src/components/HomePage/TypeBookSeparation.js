@@ -34,28 +34,29 @@ export default function TypeBookSeparation({ type }) {
     promise.catch((err) => {
       console.log("Error na rota get de /products");
     });
-  }, []);
+  });
 
   return (
     <Container>
       <h1>{type}:</h1>
 
       <BookSpace>
-        {books.length > 0 ? (
-          books.map((book, index) => (
-            <IndividualBook
-              key={index}
-              id={book.id}
-              name={book.name}
-              image={book.image}
-              type2={type}
-              price={book.price}
-            />
-          ))
-        ) : (
-          <h6>Não há livros para exibir!</h6>
-        )}
-        {}
+
+        {(books.length>0)
+        ?
+        books.map((book, index) => (
+          <IndividualBook
+            key={index}
+            id={book.id}
+            name={book.name}
+            image={book.image}
+            type2={type}
+            price={book.price}
+          />
+        ))
+        :
+        <h6>Não há livros para exibir!</h6> 
+      }
       </BookSpace>
     </Container>
   );

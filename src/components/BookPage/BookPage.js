@@ -54,7 +54,7 @@ export default function BookPage() {
     promise.catch((err) => {
       console.log("Error na rota get de /products");
     });
-  }, []);
+  });
 
   return (
     <>
