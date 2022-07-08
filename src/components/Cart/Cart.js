@@ -36,7 +36,7 @@ export default function Cart(){
         }
         sumProducts();
         
-      });
+      },[]);
 
     return (
     <PersonalizedBody>
