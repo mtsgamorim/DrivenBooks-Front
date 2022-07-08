@@ -1,50 +1,32 @@
-// import { useContext, useState, useEffect } from "react";
-// import UserContext from "../../contexts/UserContext";
+import { useContext, useState, useEffect } from "react";
+import UserContext from "../../contexts/UserContext";
 import styled from "styled-components";
-// import axios from "axios";
-import { useState, useEffect } from "react";
+import axios from "axios";
+
 
 
 export default function Cart(){
-    // const {userData} = useContext(UserContext); //token, name, email
+    const {userData} = useContext(UserContext); //token, name, email
     const [sum,setSum] = useState(0);
-    const [cart, setCart] = useState([
-        {
-        "_id": "62c72d6a1dbcd3b4793acfd1",
-        "id": 0,
-        "name": "Harry Potter e a pedra filosofal",
-        "image": "https://images-na.ssl-images-amazon.com/images/I/81ibfYk4qmL.jpg",
-        "price": 22.9,
-        "type": "Aventura",
-        "description": "Harry Potter é um garoto cujos pais, feiticeiros, foram assassinados por um poderosíssimo bruxo quando ele ainda era um bebê. Ele foi levado, então, para a casa dos tios que nada tinham a ver com o sobrenatural. Pelo contrário. Até os 10 anos, Harry foi uma espécie de gata borralheira: maltratado pelos tios, herdava roupas velhas do primo gorducho, tinha óculos remendados e era tratado como um estorvo. No dia de seu aniversário de 11 anos, entretanto, ele parece deslizar por um buraco sem fundo, como o de Alice no país das maravilhas, que o conduz a um mundo mágico. Descobre sua verdadeira história e seu destino: ser um aprendiz de feiticeiro até o dia em que terá que enfrentar a pior força do mal, o homem que assassinou seus pais. O menino de olhos verde, magricela e desengonçado, tão habituado à rejeição, descobre, também, que é um herói no universo dos magos. Potter fica sabendo que é a única pessoa a ter sobrevivido a um ataque do tal bruxo do mal e essa é a causa da marca em forma de raio que ele carrega na testa. Ele não é um garoto qualquer, ele sequer é um feiticeiro qualquer ele é Harry Potter, símbolo de poder, resistência e um líder natural entre os sobrenaturais. A fábula, recheada de fantasmas, paredes que falam, caldeirões, sapos, unicórnios, dragões e gigantes, não é, entretanto, apenas um passatempo."
-      },
-      {
-        "_id": "62c72d6a1dbcd3b4793acfd1",
-        "id": 0,
-        "name": "Harry Potter e a pedra filosofal",
-        "image": "https://images-na.ssl-images-amazon.com/images/I/81ibfYk4qmL.jpg",
-        "price": 22.9,
-        "type": "Aventura",
-        "description": "Harry Potter é um garoto cujos pais, feiticeiros, foram assassinados por um poderosíssimo bruxo quando ele ainda era um bebê. Ele foi levado, então, para a casa dos tios que nada tinham a ver com o sobrenatural. Pelo contrário. Até os 10 anos, Harry foi uma espécie de gata borralheira: maltratado pelos tios, herdava roupas velhas do primo gorducho, tinha óculos remendados e era tratado como um estorvo. No dia de seu aniversário de 11 anos, entretanto, ele parece deslizar por um buraco sem fundo, como o de Alice no país das maravilhas, que o conduz a um mundo mágico. Descobre sua verdadeira história e seu destino: ser um aprendiz de feiticeiro até o dia em que terá que enfrentar a pior força do mal, o homem que assassinou seus pais. O menino de olhos verde, magricela e desengonçado, tão habituado à rejeição, descobre, também, que é um herói no universo dos magos. Potter fica sabendo que é a única pessoa a ter sobrevivido a um ataque do tal bruxo do mal e essa é a causa da marca em forma de raio que ele carrega na testa. Ele não é um garoto qualquer, ele sequer é um feiticeiro qualquer ele é Harry Potter, símbolo de poder, resistência e um líder natural entre os sobrenaturais. A fábula, recheada de fantasmas, paredes que falam, caldeirões, sapos, unicórnios, dragões e gigantes, não é, entretanto, apenas um passatempo."
-      }
-    ]);
-    // useEffect(()=>{
-    //     async function getAxios(){
-    //         try {
-    //           const response = await axios.get("https://store-bookstore.herokuapp.com/cart", {
-    //             headers: {
-    //               "Authorization": `Bearer ${userData.token}`
-    //             }
-    //           });
-    //           setCart(response.data);
-    //         } catch (error) {
-    //           alert("Erro ao buscar produtos, tente novamente!");
-    //           console.log(error.response);
-    //         }
-    //     }
+    const [cart, setCart] = useState([]);
+    useEffect(()=>{
+        async function getAxios(){
+            try {
+              const response = await axios.get("https://store-bookstore.herokuapp.com/cart", {
+                headers: {
+                  "Authorization": `Bearer ${userData.token}`
+                }
+              });
+              setCart(response.data);
+              console.log(response.data);
+            } catch (error) {
+              alert("Erro ao buscar produtos, tente novamente!");
+              console.log(error.response);
+            }
+        }
       
-    //     getAxios();
-    // },[userData.token]);
+        getAxios();
+    },[cart,setCart]);
    
     useEffect(() => { 
         function sumProducts(){

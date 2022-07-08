@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { useContext} from "react";
 
+
 import UserContext from "../../contexts/UserContext";
+import { Link } from "react-router-dom";
+
 
 export default function UserDisplay() {
   const { userData } = useContext(UserContext);
@@ -10,9 +13,9 @@ export default function UserDisplay() {
       <div>
         <span>Bem vindo, {userData.name}</span>
       </div>
-      <div>
+      <StyledLink to="/cart">
         <ion-icon name="cart-outline"></ion-icon>
-      </div>
+      </StyledLink>
     </DisplayName>
   );
 }
@@ -29,4 +32,8 @@ const DisplayName = styled.div`
     font-size: 30px;
     margin-left: 18px;
   }
+`;
+
+const StyledLink = styled(Link)`
+  color:var(--color-bg-input);
 `;
