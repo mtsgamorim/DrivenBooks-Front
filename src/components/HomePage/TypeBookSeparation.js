@@ -69,14 +69,14 @@ const Container = styled.div`
   align-items: flex-start;
   justify-content: center;
   width: 860px;
-  height:fit-content;
-  flex-wrap:wrap;
-  font-family: 'Bungee Shade', cursive;
-  color:#fbefdc;
-  background-color:#424e5e;
-  padding:25px 0 50px 0;
-  border-radius:8px;
-  
+  height: fit-content;
+  flex-wrap: wrap;
+  font-family: "Bungee Shade", cursive;
+  color: #fbefdc;
+  background-color: #424e5e;
+  padding: 25px 0 50px 0;
+  border-radius: 8px;
+
   h1 {
     font-weight: 700;
     font-size: 30px;
@@ -86,15 +86,15 @@ const Container = styled.div`
 
 const BookSpace = styled.div`
   display: flex;
-  align-items:center;
-  justify-content:space-between;
+  align-items: center;
+  justify-content: space-between;
   overflow: hidden;
   /* width: 70%; */
-  width:fit-content;
+  width: fit-content;
   /* min-width: 230px; */
-  max-width:710px;
-  flex-wrap:wrap;
-  height:fit-content;
+  max-width: 710px;
+  flex-wrap: wrap;
+  height: fit-content;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid #424e5e;
@@ -102,13 +102,13 @@ const BookSpace = styled.div`
   border-radius: 5px;
   background-color: var(--color-bg-footer);
   font-family: "Roboto", sans-serif;
-  margin-top:20px;
-  padding:20px 20px 0 20px;
-  h6{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding-bottom:15px;
+  margin-top: 20px;
+  padding: 20px 20px 0 20px;
+  h6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
   }
 `;
 
@@ -118,7 +118,7 @@ const Book = styled.div`
   align-items: center;
   flex-direction: column;
   color: #000f27;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   img {
     width: 200px;
     height: 260px;
@@ -130,13 +130,13 @@ const Book = styled.div`
 
 const AdjustWidth = styled.div`
   width: 200px;
-  padding:5px;
-  display:flex;
-  flex-direction:column;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content:center;
-  h3{
-    margin-bottom:5px;
-    flex-wrap:wrap;
+  justify-content: center;
+  h3 {
+    margin-bottom: 5px;
+    flex-wrap: wrap;
   }
 `;
