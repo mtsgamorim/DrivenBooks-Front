@@ -34,7 +34,7 @@ export default function TypeBookSeparation({ type }) {
     promise.catch((err) => {
       console.log("Error na rota get de /products");
     });
-  }, []);
+  });
 
   return (
     <Container>
@@ -57,7 +57,6 @@ export default function TypeBookSeparation({ type }) {
         :
         <h6>Não há livros para exibir!</h6> 
       }
-      {}
       </BookSpace>
     </Container>
   );
