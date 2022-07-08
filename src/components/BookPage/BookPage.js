@@ -22,6 +22,27 @@ export default function BookPage() {
     navigate("/");
   }
 
+  function adicionaAoCarrinho() {
+    const config = {
+      headers: { Authorization: `Bearer ${userData.token}` },
+    };
+    const body = {
+      id: id,
+      email: userData.email,
+    };
+    const promise = axios.post(
+      "https://store-bookstore.herokuapp.com/cart",
+      body,
+      config
+    );
+    promise.then(() => {
+      alert("Item adicionado ao carrinho!");
+    });
+    promise.catch((err) => {
+      alert("Error ao adicionar item");
+    });
+  }
+
   useEffect(() => {
     const promise = axios.get(
       `https://store-bookstore.herokuapp.com/book/${id}`
@@ -54,15 +75,17 @@ export default function BookPage() {
               </DescripionDiv>
             </Description>
           </Flex>
-          <h5>Você precisa logar para comprar esse produto! </h5>
           {userData ? (
-            <Button>
+            <Button onClick={adicionaAoCarrinho}>
               <span>Adicionar ao carrinho</span>
             </Button>
           ) : (
-            <Button onClick={goingSignIn}>
-              <span>Clique aqui para login</span>
-            </Button>
+            <>
+              <h5>Você precisa logar para comprar esse produto! </h5>
+              <Button onClick={goingSignIn}>
+                <span>Clique aqui para login</span>
+              </Button>
+            </>
           )}
           <ButtonBackHome onClick={goHome}>
             <span>Voltar</span>
