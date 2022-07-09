@@ -73,9 +73,11 @@ function Card ({ name, image, price, id}){
               <div>
                 <h1>{name}</h1>
                 <h2>{price}</h2>
-                ICON_DEL
               </div>
             </BookInfo>
+            <Icon>
+                ICON_DEL
+            </Icon>
         </Section>
     );
 }
@@ -124,6 +126,13 @@ const Section = styled.div`
     border: 1px solid #424e5e;
     margin-bottom:10px;
     width: 300px;
+    
+`;
+
+const Icon = styled.div`
+    align-items:flex-end;
+    display:flex;
+    justify-content:flex-end;
 `;
 const BookInfo = styled(Link)`
     text-decoration:none;
