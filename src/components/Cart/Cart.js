@@ -2,10 +2,13 @@ import { useContext, useState, useEffect } from "react";
 import UserContext from "../../contexts/UserContext";
 import styled from "styled-components";
 import axios from "axios";
-
+import Button from "../shared/Button";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Cart(){
+    const navigate = useNavigate();
     const {userData} = useContext(UserContext); //token, name, email
     const [sum,setSum] = useState(0);
     const [cart, setCart] = useState([]);
@@ -26,17 +29,19 @@ export default function Cart(){
         }
       
         getAxios();
-    },[cart,setCart]);
+    },[setCart]);
    
     useEffect(() => { 
         function sumProducts(){
             let total=0;
             cart.map((product) => {return total += product.price});
+            total= total.toFixed(2).replace(".",",");
             setSum(total);
         }
         sumProducts();
         
-      });
+    });
+
 
     return (
     <PersonalizedBody>
@@ -44,28 +49,31 @@ export default function Cart(){
             <Title>Carrinho de compras</Title>
             {cart.map((product,index)=>{
                 
-                const {name, image, price } = product;
+                const {name, image, price, id } = product;
                 return (
-                    <Card key = {index} name= {name} image={image} price={price} />
+                    <Card key = {index} name= {name} image={image} price={price} id={id} />
                 )
             })}
             <Total>
                 <div>Total:</div> 
                 <div>{sum}</div>
             </Total>
+            <Button onClick={()=> navigate("/checkout")}>FINALIZAR A COMPRA</Button>
         </Container>
     </PersonalizedBody>
     );
 }
 
-function Card ({ name, image, price}){
+function Card ({ name, image, price, id}){
+    const bookRoute = `/item/${id}`;
     return(
         <Section>
-             <BookInfo>
+             <BookInfo to={bookRoute}>
               <img src={image} alt={name} />
               <div>
                 <h1>{name}</h1>
                 <h2>{price}</h2>
+                ICON_DEL
               </div>
             </BookInfo>
         </Section>
@@ -73,13 +81,20 @@ function Card ({ name, image, price}){
 }
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 25px 0 25px;
+    margin-top:350px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background-color:var(--color-bg-input);
+    border-radius:4px;
+    Button{
+        margin-top:20px;
+        width:300px;
+    }
 `;
 
 const Title = styled.div`
@@ -87,7 +102,7 @@ const Title = styled.div`
     align-items:center;
     justify-content:center;
     font-family: 'Sancreek', cursive;
-    color:#FFF;
+    color:#424e5e;
     width: 300px;
     height: fit-content;
     font-size: 30px;
@@ -105,18 +120,20 @@ const PersonalizedBody = styled.div`
 
 const Section = styled.div`
     color:#000;
-    border: 1px solid grey;
     padding:10px;
-    background-color: var(--color-bg-input);
+    border: 1px solid #424e5e;
     margin-bottom:10px;
+    width: 300px;
 `;
-const BookInfo = styled.div`
+const BookInfo = styled(Link)`
+    text-decoration:none;
     display:flex;
     h1{
         margin-bottom:10px;
     }
     h2{
         font-weight:500;
+        margin-bottom:10px;
     }
     div{
         display:flex;
@@ -132,5 +149,11 @@ const BookInfo = styled.div`
 `;
 
 const Total = styled.div`
- color:#000;
+    width:300px;
+    display:flex;
+    justify-content: space-between;
+    font-weight:700;
+    /* color: #424e5e; */
+    color:#000;
+    letter-spacing: 0.06em;
 `;
