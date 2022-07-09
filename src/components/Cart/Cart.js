@@ -11,6 +11,9 @@ export default function Cart() {
   const { userData } = useContext(UserContext); //token, name, email
   const [sum, setSum] = useState(0);
   const [cart, setCart] = useState([]);
+  function goHome() {
+    navigate("/");
+  }
   useEffect(() => {
     async function getAxios() {
       try {
@@ -68,6 +71,9 @@ export default function Cart() {
         <Button onClick={() => navigate("/checkout")}>
           FINALIZAR A COMPRA
         </Button>
+        <ButtonBackHome onClick={goHome}>
+          <span>Voltar para Home</span>
+        </ButtonBackHome>
       </Container>
     </PersonalizedBody>
   );
@@ -84,9 +90,7 @@ export default function Cart() {
         }
       );
       promise.then(() => {
-        console.log("Removido do BD");
         let newCart = cart.filter((item) => item.cartId !== cartId);
-        console.log(newCart);
         setCart([...newCart]);
       });
       promise.catch((err) => {
@@ -198,5 +202,18 @@ const Icon = styled.div`
     :hover {
       opacity: 0.7;
     }
+  }
+`;
+
+const ButtonBackHome = styled.div`
+  margin-top: 20px;
+  cursor: pointer;
+  :hover {
+    opacity: 0.7;
+  }
+  span {
+    text-decoration: underline;
+    font-size: 12px;
+    color: black;
   }
 `;
