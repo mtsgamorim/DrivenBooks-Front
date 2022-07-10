@@ -10,8 +10,12 @@ import UserContext from "../contexts/UserContext";
 
 export default function App() {
   const [userData, setUserData] = useState(null);
+  const [sum, setSum] = useState(0);
+  const [cart, setCart] = useState([]);
   return (
-    <UserContext.Provider value={{ userData, setUserData }}>
+    <UserContext.Provider
+      value={{ userData, setUserData, sum, setSum, cart, setCart }}
+    >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
