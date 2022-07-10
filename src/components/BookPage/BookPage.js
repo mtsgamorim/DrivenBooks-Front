@@ -66,7 +66,7 @@ export default function BookPage() {
             <BookInfo>
               <img src={book.image} alt={book.name} />
               <h1>{book.name}</h1>
-              <h2>{book.price.toFixed(2).replace(".", ",")}</h2>
+              <h2>R$ {book.price.toFixed(2).replace(".", ",")}</h2>
             </BookInfo>
             <Description>
               <h3>Sinopse:</h3>
@@ -111,9 +111,8 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   @media (max-width: 767px) {
-    width:90%;
+    width: 90%;
   }
-  
 `;
 
 const Flex = styled.div`
@@ -121,10 +120,10 @@ const Flex = styled.div`
   align-items: center;
   justify-content: space-around;
   @media (max-width: 767px) {
-    display:flex;
-    flex-direction:column;
-    width:100%;
-    padding:10px 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 20px 20px 0;
   }
 `;
 
@@ -148,17 +147,16 @@ const BookInfo = styled.div`
     font-size: 20px;
     margin-top: 10px;
     font-weight: 700;
-    color: black;
+    color: white;
   }
   @media (max-width: 767px) {
-    width:100%;
-    height:fit-content;
-    img{
-      width:195px;
-      height:263px;
+    width: 100%;
+    height: fit-content;
+    img {
+      width: 195px;
+      height: 263px;
     }
   }
-
 `;
 
 const Description = styled.div`
@@ -171,14 +169,13 @@ const Description = styled.div`
     margin-top: 80px;
   }
   @media (max-width: 767px) {
-    width:90%;
-    height:fit-content;
+    width: 90%;
+    height: fit-content;
     h3 {
-    font-size: 24px;
-    margin-left: 0;
-    margin-top: 0;
-  }
-
+      font-size: 24px;
+      margin-left: 0;
+      margin-top: 0;
+    }
   }
 `;
 
@@ -187,7 +184,7 @@ const DescripionDiv = styled.div`
   margin-left: 20px;
   margin-top: 10px;
   @media (max-width: 767px) {
-    width:100%;
+    width: 100%;
   }
 `;
 
@@ -205,12 +202,12 @@ const Button = styled.div`
     opacity: 0.7;
   }
   @media (max-width: 767px) {
-    width:50%;
-    padding:15px;
+    width: 50%;
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align:center;
+    text-align: center;
   }
 `;
 

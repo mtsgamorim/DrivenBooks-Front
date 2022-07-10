@@ -35,7 +35,7 @@ export default function Cart() {
 
     getAxios();
   }, [setCart]);
-   
+
   useEffect(() => {
     function sumProducts() {
       let total = 0;
@@ -46,7 +46,7 @@ export default function Cart() {
       setSum(total);
     }
     sumProducts();
-  },[cart]);
+  }, [cart]);
 
   return (
     <PersonalizedBody>
@@ -67,7 +67,7 @@ export default function Cart() {
         })}
         <Total>
           <div>Total:</div>
-          <div>{sum}</div>
+          <div>R$ {sum}</div>
         </Total>
         <Button onClick={() => navigate("/checkout")}>
           FINALIZAR A COMPRA
@@ -104,7 +104,7 @@ export default function Cart() {
           <img src={image} alt={name} />
           <div>
             <h1>{name}</h1>
-            <h2>{(price).toFixed(2).replace(".", ",")}</h2>
+            <h2>R${price.toFixed(2).replace(".", ",")}</h2>
           </div>
         </BookInfo>
         <Icon onClick={deleteOne}>
@@ -157,12 +157,16 @@ const Section = styled.div`
 const BookInfo = styled(Link)`
   text-decoration: none;
   display: flex;
+  position: relative;
   h1 {
     margin-bottom: 10px;
   }
   h2 {
     font-weight: 500;
     margin-bottom: 10px;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
   }
   div {
     display: flex;

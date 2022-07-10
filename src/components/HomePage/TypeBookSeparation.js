@@ -17,7 +17,7 @@ export default function TypeBookSeparation({ type }) {
         <img src={image} alt={name} />
         <AdjustWidth>
           <h3>{name}</h3>
-          <h4>{(price).toFixed(2).replace(".", ",")}</h4>
+          <h4>R$ {price.toFixed(2).replace(".", ",")}</h4>
         </AdjustWidth>
       </Book>
     );
@@ -41,22 +41,20 @@ export default function TypeBookSeparation({ type }) {
       <h1>{type}:</h1>
 
       <BookSpace>
-
-        {(books.length>0)
-        ?
-        books.map((book, index) => (
-          <IndividualBook
-            key={index}
-            id={book.id}
-            name={book.name}
-            image={book.image}
-            type2={type}
-            price={book.price}
-          />
-        ))
-        :
-        <h6>Não há livros para exibir!</h6> 
-      }
+        {books.length > 0 ? (
+          books.map((book, index) => (
+            <IndividualBook
+              key={index}
+              id={book.id}
+              name={book.name}
+              image={book.image}
+              type2={type}
+              price={book.price}
+            />
+          ))
+        ) : (
+          <h6>Não há livros para exibir!</h6>
+        )}
       </BookSpace>
     </Container>
   );
@@ -83,21 +81,20 @@ const Container = styled.div`
     padding-left: 70px;
   }
   @media (max-width: 767px) {
-    width:75%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding:20px 0 25px 0;
-    h1{
-      width:100%;
-      display:flex;
-      justify-content:flex-start;
-      align-items:flex-start;
-      text-align:start;
-      font-size:26px;
+    padding: 20px 0 25px 0;
+    h1 {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: start;
+      font-size: 26px;
     }
-    
   }
 `;
 
@@ -126,9 +123,9 @@ const BookSpace = styled.div`
     padding-bottom: 15px;
   }
   @media (max-width: 767px) {
-    width:100%;
+    width: 100%;
     max-width: 250px;
-    text-align:center;
+    text-align: center;
   }
 `;
 
@@ -148,15 +145,14 @@ const Book = styled.div`
     font-size: 20px;
   }
   @media (max-width: 767px) {
-    width:100%;
-    text-align:center;
+    width: 100%;
+    text-align: center;
     img {
-    width: 150px;
-    height: 205px;
-    margin: 10px;
+      width: 150px;
+      height: 205px;
+      margin: 10px;
+    }
   }
-  }
-
 `;
 
 const AdjustWidth = styled.div`
@@ -171,6 +167,6 @@ const AdjustWidth = styled.div`
     flex-wrap: wrap;
   }
   @media (max-width: 767px) {
-    width:100%;
+    width: 100%;
   }
 `;
