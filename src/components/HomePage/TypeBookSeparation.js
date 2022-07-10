@@ -82,6 +82,23 @@ const Container = styled.div`
     font-size: 30px;
     padding-left: 70px;
   }
+  @media (max-width: 767px) {
+    width:75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:20px 0 25px 0;
+    h1{
+      width:100%;
+      display:flex;
+      justify-content:flex-start;
+      align-items:flex-start;
+      text-align:start;
+      font-size:26px;
+    }
+    
+  }
 `;
 
 const BookSpace = styled.div`
@@ -110,6 +127,10 @@ const BookSpace = styled.div`
     justify-content: center;
     padding-bottom: 15px;
   }
+  @media (max-width: 767px) {
+    width:100%;
+    max-width: 250px;
+  }
 `;
 
 const Book = styled.div`
@@ -126,6 +147,9 @@ const Book = styled.div`
   h3 {
     font-size: 20px;
   }
+  @media (max-width: 767px) {
+    width:100%;
+  }
 `;
 
 const AdjustWidth = styled.div`
@@ -138,5 +162,8 @@ const AdjustWidth = styled.div`
   h3 {
     margin-bottom: 5px;
     flex-wrap: wrap;
+  }
+  @media (max-width: 767px) {
+    width:100%;
   }
 `;

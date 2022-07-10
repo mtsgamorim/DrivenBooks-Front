@@ -103,19 +103,29 @@ const MarginHeader = styled.div`
 `;
 
 const Content = styled.div`
-  width: 80%;
+  width: 75%;
   height: 800px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 767px) {
+    width:90%;
+  }
+  
 `;
 
 const Flex = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  @media (max-width: 767px) {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    padding:10px 20px 20px 0;
+  }
 `;
 
 const BookInfo = styled.div`
@@ -140,6 +150,15 @@ const BookInfo = styled.div`
     font-weight: 700;
     color: black;
   }
+  @media (max-width: 767px) {
+    width:100%;
+    height:fit-content;
+    img{
+      width:195px;
+      height:263px;
+    }
+  }
+
 `;
 
 const Description = styled.div`
@@ -151,12 +170,25 @@ const Description = styled.div`
     margin-left: 20px;
     margin-top: 80px;
   }
+  @media (max-width: 767px) {
+    width:90%;
+    height:fit-content;
+    h3 {
+    font-size: 24px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  }
 `;
 
 const DescripionDiv = styled.div`
   width: 80%;
   margin-left: 20px;
   margin-top: 10px;
+  @media (max-width: 767px) {
+    width:100%;
+  }
 `;
 
 const Button = styled.div`
@@ -171,6 +203,14 @@ const Button = styled.div`
   background-color: #a795a5;
   :hover {
     opacity: 0.7;
+  }
+  @media (max-width: 767px) {
+    width:50%;
+    padding:15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
   }
 `;
 

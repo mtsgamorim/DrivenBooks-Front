@@ -3,8 +3,10 @@ import UserContext from "../../contexts/UserContext";
 import styled from "styled-components";
 import axios from "axios";
 import Button from "../shared/Button";
+import ButtonBackHome from "../shared/ButtonBackHome";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import PersonalizedBody from "../shared/PersonalizedBody";
 
 export default function Cart() {
   const navigate = useNavigate();
@@ -115,7 +117,6 @@ export default function Cart() {
 }
 
 const Container = styled.div`
-  margin-top: 350px;
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -128,6 +129,9 @@ const Container = styled.div`
   Button {
     margin-top: 20px;
     width: 300px;
+  }
+  span {
+    color:#424e5e;
   }
 `;
 
@@ -142,14 +146,6 @@ const Title = styled.div`
   font-size: 30px;
   line-height: 50px;
   flex-wrap: wrap;
-`;
-
-const PersonalizedBody = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const Section = styled.div`
@@ -205,15 +201,15 @@ const Icon = styled.div`
   }
 `;
 
-const ButtonBackHome = styled.div`
-  margin-top: 20px;
-  cursor: pointer;
-  :hover {
-    opacity: 0.7;
-  }
-  span {
-    text-decoration: underline;
-    font-size: 12px;
-    color: black;
-  }
-`;
+// const ButtonBackHome = styled.div`
+//   margin-top: 20px;
+//   cursor: pointer;
+//   :hover {
+//     opacity: 0.7;
+//   }
+//   span {
+//     text-decoration: underline;
+//     font-size: 12px;
+//     color: black;
+//   }
+// `;
