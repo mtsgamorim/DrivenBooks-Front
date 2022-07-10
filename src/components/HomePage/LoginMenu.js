@@ -45,4 +45,13 @@ const Menu = styled.div`
       }
     }
   }
+
+  @media (max-width: 767px) {
+    width:100%;
+    margin:0px;
+    padding-left:40px;
+    span{
+      font-size:18px;
+    }
+  }
 `;
