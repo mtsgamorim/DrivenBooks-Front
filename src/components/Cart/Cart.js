@@ -29,6 +29,7 @@ export default function Cart() {
       } catch (error) {
         alert("Erro ao buscar produtos, tente novamente!");
         console.log(error.response);
+        navigate("../");
       }
     }
 
@@ -45,7 +46,7 @@ export default function Cart() {
       setSum(total);
     }
     sumProducts();
-  },[]);
+  },[cart]);
 
   return (
     <PersonalizedBody>
@@ -103,7 +104,7 @@ export default function Cart() {
           <img src={image} alt={name} />
           <div>
             <h1>{name}</h1>
-            <h2>{price}</h2>
+            <h2>{(price).toFixed(2).replace(".", ",")}</h2>
           </div>
         </BookInfo>
         <Icon onClick={deleteOne}>

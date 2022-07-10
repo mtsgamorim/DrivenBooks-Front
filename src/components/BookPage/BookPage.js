@@ -66,7 +66,7 @@ export default function BookPage() {
             <BookInfo>
               <img src={book.image} alt={book.name} />
               <h1>{book.name}</h1>
-              <h2>{book.price}</h2>
+              <h2>{book.price.toFixed(2).replace(".", ",")}</h2>
             </BookInfo>
             <Description>
               <h3>Sinopse:</h3>
