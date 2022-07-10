@@ -17,7 +17,7 @@ export default function TypeBookSeparation({ type }) {
         <img src={image} alt={name} />
         <AdjustWidth>
           <h3>{name}</h3>
-          <h4>{price}</h4>
+          <h4>{(price).toFixed(2).replace(".", ",")}</h4>
         </AdjustWidth>
       </Book>
     );
@@ -106,9 +106,7 @@ const BookSpace = styled.div`
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  /* width: 70%; */
   width: fit-content;
-  /* min-width: 230px; */
   max-width: 710px;
   flex-wrap: wrap;
   height: fit-content;
@@ -144,6 +142,7 @@ const Book = styled.div`
   img {
     width: 200px;
     height: 260px;
+    padding: 10px;
   }
   h3 {
     font-size: 20px;
