@@ -29,4 +29,7 @@ const HomePageStyle= styled.div`
   width: 100%;
   color:var(--color-bg-input);
   padding:10px;
+  @media (max-width: 767px) {
+    width:100%;
+  }
 `;
