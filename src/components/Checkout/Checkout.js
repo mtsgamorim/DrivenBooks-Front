@@ -48,19 +48,6 @@ const CentralizedStyle = styled.div`
     padding:25px;
 `;
 
-// const Container = styled.div`
-//     /* width:600px; */
-//     height: fit-content;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     margin-top:250px; 
-    
-    
-    
-// `;
-
 const Container = styled.div`
   width: fit-content;
   width:300px;
@@ -103,13 +90,6 @@ const Head = styled.div`
     padding:20px;
     border-radius:4px;
 `;
-// const PersonalizedBody = styled.div`
-//   width: 100vw;
-//   height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
 
 const User = styled.div`
 `;

@@ -7,6 +7,7 @@ import Checkout from "./Checkout/Checkout";
 import Cart from "./Cart/Cart";
 import { useState } from "react";
 import UserContext from "../contexts/UserContext";
+import FinishOrderPage from "./FinishOrderPage/FinishOrderPage";
 
 export default function App() {
   const [userData, setUserData] = useState(null);
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/item/:id" element={<BookPage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/FinishOrderPage" element={<FinishOrderPage />}/>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

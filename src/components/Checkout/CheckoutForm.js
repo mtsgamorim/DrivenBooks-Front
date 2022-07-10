@@ -10,7 +10,7 @@ import { ThreeDots } from "react-loader-spinner";
 export default function CheckoutForm() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { userData, cart, setCart, sum } = useContext(UserContext);
+  const { userData, cart } = useContext(UserContext);
   let [cpf, setCpf] = useState("");
   let [payment, setPayment] = useState("");
   let [street, setStreet] = useState("");
@@ -58,12 +58,13 @@ export default function CheckoutForm() {
         }
       );
       promise.then(() => {
-        navigate("/");
+        navigate("/FinishOrderPage");
       });
       promise.catch((err) => {
         alert("Erro ao fazer a compra!");
+        navigate("/");
       });
-      navigate("/");
+      
     } catch (error) {
       alert("As informações estão incorretas. Insira os dados novamente!");
       setLoading(false);
