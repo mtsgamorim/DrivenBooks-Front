@@ -59,9 +59,11 @@ const TopBarDesktop = styled.div`
 `;
 
 const TopBarMobile = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-    
+  display:none;
+  @media (max-width:767px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 `;

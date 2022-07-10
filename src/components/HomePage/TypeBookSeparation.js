@@ -130,6 +130,7 @@ const BookSpace = styled.div`
   @media (max-width: 767px) {
     width:100%;
     max-width: 250px;
+    text-align:center;
   }
 `;
 
@@ -149,7 +150,14 @@ const Book = styled.div`
   }
   @media (max-width: 767px) {
     width:100%;
+    text-align:center;
+    img {
+    width: 150px;
+    height: 205px;
+    margin: 10px;
   }
+  }
+
 `;
 
 const AdjustWidth = styled.div`
@@ -157,7 +165,7 @@ const AdjustWidth = styled.div`
   padding: 5px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   h3 {
     margin-bottom: 5px;

@@ -8,10 +8,11 @@ import CheckoutForm from "./CheckoutForm";
 
 export default function Checkout(){
     const navigate = useNavigate();
-    const { userData } = useContext(UserContext);
+    const { userData,setUserData } = useContext(UserContext);
     function finishSession(){
         const isToLogOut = window.confirm("Deseja sair?");
         if(isToLogOut){
+            setUserData(null);
             navigate("/");
         }
     }
