@@ -58,8 +58,8 @@ const TopBarDesktop = styled.div`
 `;
 
 const TopBarMobile = styled.div`
-  display: none;
-  @media (max-width: 767px) {
+  display:none;
+  @media (max-width:767px) {
     display: flex;
     align-items: center;
     justify-content: space-between;
