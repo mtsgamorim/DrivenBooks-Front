@@ -34,7 +34,7 @@ export default function Cart() {
 
     getAxios();
   }, [setCart]);
-
+   
   useEffect(() => {
     function sumProducts() {
       let total = 0;
@@ -45,7 +45,7 @@ export default function Cart() {
       setSum(total);
     }
     sumProducts();
-  });
+  },[]);
 
   return (
     <PersonalizedBody>
