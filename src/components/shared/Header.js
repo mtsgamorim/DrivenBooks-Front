@@ -24,7 +24,6 @@ export default function Header() {
         </LogoBox>
         {userData ? <UserDisplay /> : <LoginMenu />}
       </TopBarMobile>
-
     </Container>
   );
 }
@@ -32,7 +31,7 @@ export default function Header() {
 const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   height: 65px;
   width: 100%;
   background-color: #a795a5;
@@ -40,7 +39,7 @@ const Container = styled.div`
   top: 0;
   left: 0;
   @media (max-width: 767px) {
-    width:100%;
+    width: 100%;
   }
 `;
 
@@ -53,8 +52,8 @@ const TopBarDesktop = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 75%;
-  @media (max-width:767px) {
-    display:none;
+  @media (max-width: 767px) {
+    display: none;
   }
 `;
 
