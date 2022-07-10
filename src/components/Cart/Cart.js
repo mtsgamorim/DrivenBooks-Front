@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import UserContext from "../../contexts/UserContext";
 import styled from "styled-components";
 import axios from "axios";
@@ -10,9 +10,7 @@ import PersonalizedBody from "../shared/PersonalizedBody";
 
 export default function Cart() {
   const navigate = useNavigate();
-  const { userData } = useContext(UserContext); //token, name, email
-  const [sum, setSum] = useState(0);
-  const [cart, setCart] = useState([]);
+  const { userData, sum, setSum, cart, setCart } = useContext(UserContext); //token, name, email
   function goHome() {
     navigate("/");
   }
@@ -131,7 +129,7 @@ const Container = styled.div`
     width: 300px;
   }
   span {
-    color:#424e5e;
+    color: #424e5e;
   }
 `;
 
