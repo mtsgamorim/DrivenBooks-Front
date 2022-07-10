@@ -54,7 +54,7 @@ export default function SignUpForm(){
     return(
         
         <form onSubmit={submitData}>
-            <Input type="text" placeholder="Nome" value={name} onChange={e=> setName(e.target.value)} disabled={disable()} color={loading} required  />
+            <Input type="text" placeholder="Nome" value={name} onChange={e=> setName(e.target.value)} disabled={disable()} color={loading} maxLength={12} required  />
             <Input type="email" placeholder="E-mail" value={email} onChange={e=> setEmail(e.target.value)} disabled={disable()} color={loading} required  />
             <Input type="password" placeholder="Senha" value={password} onChange={e=> setPassword(e.target.value)} disabled={disable()} color={loading} required  />
             <Input type="password" placeholder="Confirme a senha" value={confirmPassword} onChange={e=> setConfirmPassword(e.target.value)} disabled={disable()} color={loading} required  />

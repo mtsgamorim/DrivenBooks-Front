@@ -25,6 +25,7 @@ const DisplayName = styled.div`
   margin-right: 80px;
   span {
     font-size: 28px;
+    margin-left:80px;
   }
   ion-icon {
     font-size: 30px;
@@ -36,6 +37,9 @@ const DisplayName = styled.div`
     padding-left:40px;
     span{
       font-size:16px;
+      max-width: 50px;
+      flex-wrap:wrap;
+      max-height:60px;
     }
   }
 `;

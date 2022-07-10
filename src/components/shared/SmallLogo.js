@@ -3,8 +3,7 @@ import styled from "styled-components";
 export default function SmallLogo(){
     return(
         <Logo>
-            Driven
-            Books
+            DrivenBooks
         </Logo>
     );
 }
@@ -17,6 +16,7 @@ const Logo = styled.div`
     /* color: var(--color-text); */
     color:#FFF;
     width: 80px;
-    font-size: 26px;
+    font-size: 30px;
     line-height: 26.5px;
+    margin-right:25px;
 `;
