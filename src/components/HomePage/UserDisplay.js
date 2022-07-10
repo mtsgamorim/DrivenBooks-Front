@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useContext} from "react";
+import { useContext } from "react";
 import UserContext from "../../contexts/UserContext";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,10 @@ export default function UserDisplay() {
   return (
     <DisplayName>
       <div>
-        <span>Bem vindo, {userData.name}</span>
+        <span>
+          <div>Bem vindo,</div>
+          <div>{userData.name}</div> 
+        </span>
       </div>
       <StyledLink to="/cart">
         <ion-icon name="cart-outline"></ion-icon>
@@ -35,11 +38,14 @@ const DisplayName = styled.div`
     width:100%;
     margin:0px;
     padding-left:40px;
+    div:last-child{
+      padding-bottom:20px;
+    }
     span{
       font-size:16px;
-      max-width: 50px;
       flex-wrap:wrap;
-      max-height:60px;
+      max-height:100%;
+      text-align:center;
     }
   }
 `;
