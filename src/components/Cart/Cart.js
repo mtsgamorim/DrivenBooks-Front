@@ -34,32 +34,8 @@ export default function Cart() {
 
     getAxios();
   }, [setCart]);
-
-
-export default function Cart(){
-    const {userData} = useContext(UserContext); //token, name, email
-    const [sum,setSum] = useState(0);
-    const [cart, setCart] = useState([]);
-    useEffect(()=>{
-        async function getAxios(){
-            try {
-              const response = await axios.get("https://store-bookstore.herokuapp.com/cart", {
-                headers: {
-                  "Authorization": `Bearer ${userData.token}`
-                }
-              });
-              setCart(response.data);
-              console.log(response.data);
-            } catch (error) {
-              alert("Erro ao buscar produtos, tente novamente!");
-              console.log(error.response);
-            }
-        }
-      
-        getAxios();
-    },[cart,setCart]);
    
-    useEffect(() => {
+  useEffect(() => {
     function sumProducts() {
       let total = 0;
       cart.map((product) => {
