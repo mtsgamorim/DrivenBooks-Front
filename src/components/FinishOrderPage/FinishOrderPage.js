@@ -1,4 +1,4 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import UserContext from "../../contexts/UserContext";
 import styled from "styled-components";
 import Button from "../shared/Button";
@@ -8,59 +8,60 @@ import PersonalizedBody from "../shared/PersonalizedBody";
 import { Link } from "react-router-dom";
 
 export default function FinishOrderPage() {
-    const navigate = useNavigate();
-    const { userData, setUserData, sum,cart } = useContext(UserContext); //token, name, email
-    function goHome() {
-        navigate("/");
+  const navigate = useNavigate();
+  const { userData, setUserData, sum, cart } = useContext(UserContext); //token, name, email
+  function goHome() {
+    navigate("/");
+  }
+  function finishSession() {
+    const isToLogOut = window.confirm("Deseja sair?");
+    if (isToLogOut) {
+      setUserData(null);
+      navigate("/");
     }
-    function finishSession(){
-        const isToLogOut = window.confirm("Deseja sair?");
-        if(isToLogOut){
-            setUserData(null);
-            navigate("/");
-        }
-    }
+  }
 
-    return (
-        <PersonalizedBody>
-            <Container>
-                <Title>Descrição do pedido</Title>
-                {cart.map((product, index) => {
-                    const { name } = product;
-                    return (
-                        <Card
-                            key={index}
-                            name={name}
-                        />
-                    );
-                })}
-                <Total>
-                    <div>Total:</div>
-                    <div>{sum}</div>
-                </Total>
-                <Title><p>Obrigado pela compra, {userData.name}!</p></Title>
-                <Button onClick={()=>{finishSession()}}>
-                    Encerrar sessão
-                </Button>
-                <ButtonBackHome onClick={goHome}>
-                    <span>Voltar para Home</span>
-                </ButtonBackHome>
-            </Container>
-        </PersonalizedBody>
-    );
+  return (
+    <PersonalizedBody>
+      <Container>
+        <Title>Descrição do pedido</Title>
+        {cart.map((product, index) => {
+          const { name } = product;
+          return <Card key={index} name={name} />;
+        })}
+        <Total>
+          <div>Total:</div>
+          <div>R$ {sum}</div>
+        </Total>
+        <Title>
+          <p>Obrigado pela compra, {userData.name}!</p>
+        </Title>
+        <Button
+          onClick={() => {
+            finishSession();
+          }}
+        >
+          Encerrar sessão
+        </Button>
+        <ButtonBackHome onClick={goHome}>
+          <span>Voltar para Home</span>
+        </ButtonBackHome>
+      </Container>
+    </PersonalizedBody>
+  );
 }
 
 function Card({ name, id }) {
-    const bookRoute = `/item/${id}`;
-    return (
-        <Section>
-            <BookInfo to={bookRoute}>
-                <div>
-                    <h1>{name}</h1>
-                </div>
-            </BookInfo>
-        </Section>
-    );
+  const bookRoute = `/item/${id}`;
+  return (
+    <Section>
+      <BookInfo to={bookRoute}>
+        <div>
+          <h1>{name}</h1>
+        </div>
+      </BookInfo>
+    </Section>
+  );
 }
 const Container = styled.div`
   width: fit-content;
@@ -92,11 +93,11 @@ const Title = styled.div`
   font-size: 30px;
   line-height: 50px;
   flex-wrap: wrap;
-  text-align:center;
-  p{
-    margin-top:10px;
-    background-color:#3b2b46;
-    color:#ffffea;
+  text-align: center;
+  p {
+    margin-top: 10px;
+    background-color: #3b2b46;
+    color: #ffffea;
   }
 `;
 
