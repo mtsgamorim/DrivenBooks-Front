@@ -181,7 +181,6 @@ const Total = styled.div`
   display: flex;
   justify-content: space-between;
   font-weight: 700;
-  /* color: #424e5e; */
   color: #000;
   letter-spacing: 0.06em;
 `;
