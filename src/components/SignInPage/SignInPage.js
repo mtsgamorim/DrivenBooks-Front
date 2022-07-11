@@ -36,22 +36,4 @@ const Container = styled.div`
   padding: 0 25px 0 25px;
 `;
 
-// const PersonalizedBody = styled.div`
-//   width: 100vw;
-//   height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
 
-// const ButtonBackHome = styled.div`
-//   margin-top: 20px;
-//   cursor: pointer;
-//   :hover {
-//     opacity: 0.7;
-//   }
-//   span {
-//     text-decoration: underline;
-//     font-size: 12px;
-//   }
-// `;

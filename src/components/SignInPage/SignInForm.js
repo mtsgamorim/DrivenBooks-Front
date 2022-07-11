@@ -56,9 +56,9 @@ export default function SignInForm() {
     );
   }
 
-  function disable() {
-    return loading ? "disable" : "";
-  }
+  // function disable() {
+  //   return loading ? "disable" : "";
+  // }
 
   return (
     <form onSubmit={submitData}>
@@ -67,7 +67,6 @@ export default function SignInForm() {
         placeholder="E-mail"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        disabled={disable()}
         color={loading}
         required
         autoComplete="true"
@@ -77,7 +76,6 @@ export default function SignInForm() {
         placeholder="Senha"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        disabled={disable()}
         color={loading}
         required
         autoComplete="true"
