@@ -14,6 +14,7 @@ export default function SignUpForm(){
     let [password, setPassword] = useState("");
     let [confirmPassword, setConfirmPassword] = useState("");
     const [loading,setLoading] = useState(false);
+    let isClicked = false;
 
     async function submitData(event) {
         event.preventDefault();
@@ -41,6 +42,7 @@ export default function SignUpForm(){
     }
 
     function loadingButton(){
+        isClicked=!isClicked;
         return loading ? 
             (<ThreeDots color="#FFF" background-color={"var(--color-bg-input)"} opacity={0.7} height={80} width={80} />)
             :
@@ -48,7 +50,7 @@ export default function SignUpForm(){
     }
 
     function disable(){
-        return loading ? "disable" : "";
+        return isClicked ? "disable" : "";
     }
 
     return(
