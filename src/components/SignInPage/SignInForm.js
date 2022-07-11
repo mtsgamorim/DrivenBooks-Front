@@ -33,8 +33,8 @@ export default function SignInForm() {
       });
       navigate("/");
     } catch (error) {
-      setEmail = "";
-      setPassword = "";
+      setEmail("");
+      setPassword("");
       alert(
         "As informações de e-mail e/ou senha estão incorretas. Insira os dados novamente ou faça o cadastro!"
       );
